@@ -1,0 +1,28 @@
+{
+  "name": "tester",
+  "version": "1.0.0",
+  "description": "tests endpoints",
+  "main": "index.js",
+  "repository": "https://github.com/t-kings/test-endpoints.git",
+  "author": "t-kings",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.4.0",
+    "prettier": "2.5.1",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "build": "rimraf build && yarn lint && tsc",
+    "start": "yarn build && node ./build/index.js",
+    "lint": "eslint --fix"
+  }
+}
