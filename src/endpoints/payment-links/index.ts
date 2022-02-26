@@ -1,3 +1,4 @@
+import paymentEndpoints from "endpoints/payment";
 import { Endpoint } from "../../types";
 import { donationPaymentLinks } from "./donation-payment-link";
 import { singleChargePaymentLinks } from "./single-charge-payment-link";

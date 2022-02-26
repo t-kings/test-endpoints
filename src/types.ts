@@ -6,4 +6,5 @@ export interface Endpoint {
   expected: number;
   description: string;
   extendedTest?: (v: { data?: any; message: string }) => boolean;
+  token?: string;
 }

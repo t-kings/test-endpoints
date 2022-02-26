@@ -29,12 +29,14 @@ export class EndpointRequest {
     method: "get" | "post" | "delete" | "patch" = "get",
     useToken = false,
     body = {},
+    token = "",
     contentType = "application/json"
   ): Promise<{
     status: number;
     data?: T;
     message: string;
     accessToken?: string;
+    token?: string;
   }> => {
     try {
       let request: Record<string, any>;
@@ -47,7 +49,7 @@ export class EndpointRequest {
         }
       }
       const headers = {
-        ...(useToken ? { Authorization: this.token } : {}),
+        ...(useToken ? { Authorization: token || this.token } : {}),
         "Content-Type": contentType,
       };
 

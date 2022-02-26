@@ -66,12 +66,14 @@ const checkEndpoint = async ({
   expected,
   description,
   extendedTest,
+  token,
 }: Endpoint) => {
   const { status, message, data } = await endpointRequest.request(
     path,
     method,
     useToken,
-    body
+    body,
+    token
   );
   let res = true;
   if (extendedTest) {
